@@ -2,43 +2,71 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Concerns\InteractsWithUserAttributes;
+use App\Models\Concerns\ObservesWrites;
+use App\Models\Enums\Gender;
+use App\Observers\Observable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    use HasApiTokens, Notifiable, SoftDeletes, InteractsWithUserAttributes, ObservesWrites, Observable;
 
     /**
      * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token', 'meta'];
 
     /**
      * The attributes that should be cast.
-     *
-     * @var array<string, string>
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'last_login'        => 'datetime',
+        'banned_until'      => 'datetime',
+        'gender'            => Gender::class,
     ];
+
+    /**
+     * Scope a query to only include admin users.
+     */
+    public function scopeAdmin(Builder $builder): void
+    {
+        $builder->whereType('admin');
+    }
+
+    /**
+     * Scope a query to only include users that are customers.
+     */
+    public function scopePatient(Builder $builder): void
+    {
+        $builder->whereType('patient');
+    }
+
+    /**
+     * Scope a query to only include users that are customers.
+     */
+    public function scopeDoctor(Builder $builder): void
+    {
+        $builder->whereType('doctor');
+    }
+
+    /**
+     * Scope a query to only include users that can receive notifications.
+     */
+    public function scopeNotifiable(Builder $builder): void
+    {
+        $builder->whereNotifiable(true);
+    }
+
+    public function transactions(): HasMany
+    {
+        return $this->hasMany(Transaction::class, 'created_by');
+    }
 }
