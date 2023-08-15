@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login',     [AuthController::class, 'store'])->name('login');
 Route::post('/register',  [NewUserController::class, 'store'])->name('register');
+Route::delete('/logout',  [AuthController::class, 'destroy'])->name('logout');
