@@ -13,7 +13,7 @@ trait ChecksUserState
     }
 
     /**
-     * Determine if the user is a customer.
+     * Determine if the user is a patient.
      */
     public function isPatient(): bool
     {
@@ -21,7 +21,7 @@ trait ChecksUserState
     }
 
     /**
-     * Determine if the user is a customer.
+     * Determine if the user is a doctor.
      */
     public function isDoctor(): bool
     {
