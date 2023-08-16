@@ -22,4 +22,14 @@ class AuthController extends Controller
 
         return Response::api('Welcome back...');
     }
+
+    public function destroy(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return Response::api('Goodbye!');
+    }
 }
