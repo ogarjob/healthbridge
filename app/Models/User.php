@@ -8,6 +8,7 @@ use App\Models\Enums\Gender;
 use App\Observers\Observable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +17,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, Notifiable, SoftDeletes, InteractsWithUserAttributes, ObservesWrites, Observable;
+    use HasFactory, HasApiTokens, Notifiable, SoftDeletes, InteractsWithUserAttributes, ObservesWrites, Observable;
 
     /**
      * The attributes that should be hidden for serialization.
@@ -42,7 +43,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * Scope a query to only include users that are customers.
+     * Scope a query to only include users that are patients.
      */
     public function scopePatient(Builder $builder): void
     {
@@ -50,7 +51,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * Scope a query to only include users that are customers.
+     * Scope a query to only include users that are doctors.
      */
     public function scopeDoctor(Builder $builder): void
     {
@@ -63,6 +64,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function scopeNotifiable(Builder $builder): void
     {
         $builder->whereNotifiable(true);
+    }
+
+    public function appointments(): HasMany
+    {
+        return $this->hasMany(Appointment::class);
     }
 
     public function transactions(): HasMany
