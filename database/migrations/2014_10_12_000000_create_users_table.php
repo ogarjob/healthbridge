@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('phone', 45)->nullable()->unique();
             $table->string('password')->nullable();
             $table->enum('gender', ['M', 'F'])->default('M')->index();
+            $table->enum('language', ['english', 'yoruba', 'igbo', 'hausa'])->default('english');
             $table->string('photo')->nullable();
             $table->text('address')->nullable();
             $table->enum('type', ['admin', 'patient', 'doctor'])->default('patient');
