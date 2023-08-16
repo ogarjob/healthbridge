@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('department_id')->constrained();
-            $table->timestamp('datetime');
+            $table->decimal('total', 10)->default(10000);
+            $table->enum('type', ['consultation', 'follow-up', 'diagnostic'])->default('consultation');
+            $table->string('notes')->nullable();
+            $table->timestamp('scheduled_date');
+            $table->authors();
             $table->timestamps();
         });
     }
