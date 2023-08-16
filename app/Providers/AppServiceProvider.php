@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Department;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerMigrationMacros();
         $this->registerApiResponseMacro();
         $this->registerCarbonMacro();
+        $this->registerCacheableApplicationModels();
     }
 
     /**
@@ -66,12 +68,19 @@ class AppServiceProvider extends ServiceProvider
             return ($user ?? user())->isAdmin();
         });
 
-        Blade::if('customer', function (?User $user = null) {
-            return ($user ?? user())->isCustomer();
+        Blade::if('patient', function (?User $user = null) {
+            return ($user ?? user())->isPatient();
         });
 
         Blade::directive('money', function ($expression) {
             return "<?php echo number_format($expression) ?>";
         });
+    }
+
+    public function registerCacheableApplicationModels()
+    {
+        $this->app->bind('departments', fn () => Department::all());
+
+        $this->app->bind('users', fn () => User::all());
     }
 }
