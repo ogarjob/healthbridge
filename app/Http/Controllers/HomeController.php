@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use App\Models\SubCategory;
+use App\Models\Department;
 
 class HomeController extends Controller
 {
     public function __invoke()
     {
-        return view('home');
-    }
+        $departments = Department::all();
 
+        return view('home', compact('departments'));
+    }
 }
