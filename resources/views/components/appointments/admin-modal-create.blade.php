@@ -82,6 +82,16 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="form-group mb-7">
+                        <select class="form-select form-select-solid" name="type" data-placeholder="Appointment Type" data-control="select2" data-hide-search="true">
+                            <option></option>
+                            <option value="check-up">Check-up</option>
+                            <option value="consultation">Consultation</option>
+                            <option value="follow-up">Follow-up</option>
+                            <option value="diagnostic">Diagnostic</option>
+                            <option value="emergency">Emergency</option>
+                        </select>
+                    </div>
                     <div class="fv-row mb-7">
                         <input class="form-control form-control-solid" type="datetime-local" name="scheduled_date" placeholder="">
                     </div>
