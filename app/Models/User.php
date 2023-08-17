@@ -51,14 +51,6 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * Scope a query to only include users that are doctors.
-     */
-    public function scopeDoctor(Builder $builder): void
-    {
-        $builder->whereType('doctor');
-    }
-
-    /**
      * Scope a query to only include users that can receive notifications.
      */
     public function scopeNotifiable(Builder $builder): void
