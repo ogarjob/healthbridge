@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AppointmentController;
 use App\Http\Controllers\Api\AppointmentStatusController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\DepartmentController;
+use App\Http\Controllers\Api\EHealthAppointmentController;
 use App\Http\Controllers\Api\NewUserController;
 use App\Http\Controllers\Api\TransactionController;
 use App\Http\Controllers\Api\UserController;
@@ -27,6 +28,7 @@ Route::delete('/logout',  [AuthController::class, 'destroy'])->name('logout');
 Route::post('/set-locale', SetLocaleController::class)->name('set-locale');
 
 Route::apiResource('appointments',          AppointmentController::class)->only('store');
+Route::apiResource('ehealth-appointments',  EHealthAppointmentController::class)->only('store');
 
 Route::middleware('auth')->group(function () {
     Route::apiResource('users',                         UserController::class)->only('store', 'update', 'destroy');
