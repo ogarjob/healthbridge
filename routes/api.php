@@ -30,6 +30,7 @@ Route::apiResource('appointments',  AppointmentController::class)->only('store')
 Route::middleware('auth')->group(function () {
     Route::apiResource('users',                         UserController::class)->only('store', 'update', 'destroy');
     Route::apiresource('departments',                   DepartmentController::class)->only('store', 'update', 'destroy');
+    Route::apiResource('appointments',                  AppointmentController::class)->only('update');
     Route::apiResource('appointments.status',           AppointmentStatusController::class)->only('store');
     Route::apiResource('appointments.transactions',     TransactionController::class)->only('store');
 });
