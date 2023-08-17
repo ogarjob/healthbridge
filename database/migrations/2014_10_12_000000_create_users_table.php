@@ -23,7 +23,7 @@ return new class extends Migration
             $table->enum('language', ['english', 'yoruba', 'igbo', 'hausa'])->default('english');
             $table->string('photo')->nullable();
             $table->text('address')->nullable();
-            $table->enum('type', ['admin', 'patient', 'doctor'])->default('patient');
+            $table->enum('type', ['admin', 'patient'])->default('patient');
             $table->foreignId('role_id')->nullable()->constrained();
             $table->boolean('notifiable')->default(true);
             $table->integer('login_count')->default(0);
