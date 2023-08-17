@@ -125,7 +125,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer flex-center">
-                                        <button type="submit" class="btn btn-primary mb-10">
+                                        <button type="submit" class="btn btn-danger mb-10">
                                             <i class="fa fa-user-circle"></i> Add {{ str($type)->singular() }}
                                         </button>
                                     </div>
