@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAppointmentRequest;
+use App\Http\Requests\UpdateAppointmentRequest;
+use App\Models\Appointment;
 use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -21,14 +23,14 @@ class AppointmentController extends Controller
         ]);
     }
 
-    public function update(UpdateOrderRequest $request, Order $appointment)
+    public function update(UpdateAppointmentRequest $request, Appointment $appointment)
     {
         $appointment->update($request->validated());
 
         return Response::api('Updated Successfully!');
     }
 
-    public function destroy(Order $appointment)
+    public function destroy(Appointment $appointment)
     {
         $appointment->deleteOrFail();
 
