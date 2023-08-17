@@ -21,14 +21,6 @@ trait ChecksUserState
     }
 
     /**
-     * Determine if the user is a doctor.
-     */
-    public function isDoctor(): bool
-    {
-        return $this->type == 'doctor';
-    }
-
-    /**
      * Determine if the user is a super-admin.
      */
     public function isSuperAdmin(): bool
