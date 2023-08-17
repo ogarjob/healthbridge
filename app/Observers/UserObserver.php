@@ -13,7 +13,7 @@ class UserObserver
      */
     public function creating(User $user): void
     {
-        //
+        $user->password ??= '1234';
     }
 
     /**
