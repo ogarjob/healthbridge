@@ -16,8 +16,8 @@
     <title>{{ $title ?? config('app.name') }}</title>
     <meta property="og:locale" content="en_US"/>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/img/logo/favicon.png') }}">
-    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{ asset('/img/logo/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('media/logos/default.svg') }}">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{ asset('media/logos/default.svg') }}">
     <link rel="canonical" href="{{ route('home') }}"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"/>
     <link href="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css"/>
