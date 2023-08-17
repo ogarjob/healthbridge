@@ -33,7 +33,8 @@ class UpdateUserRequest extends FormRequest
             'phone'             => ['filled', 'digits_between:10,15', $unique],
             'photo'             => 'image',
             'type'              => Rule::prohibitedIf(! $this->user()->isAdmin()),
-            'banned_until'      => [Rule::prohibitedIf(! $this->user()->isAdmin()),'nullable', 'date']
+            'banned_until'      => [Rule::prohibitedIf(! $this->user()->isAdmin()),'nullable', 'date'],
+            'language'          => 'filled',
         ];
     }
 }
