@@ -171,6 +171,21 @@
                                             </div>
                                         </div>
                                         <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class="row mb-6">
+                                            <label class="col-lg-4 col-form-label fw-semibold fs-6" for="phone">
+                                                <span class="required">Preferred Language</span>
+                                            </label>
+                                            <div class="col-lg-8 fv-row">
+                                                <select class="form-select form-select-solid" name="language" aria-label="language" data-hide-search="true" data-control="select2" data-placeholder="Select Language" required>
+                                                    <option value="english" @selected($user->language == 'english')>English</option>
+                                                    <option value="yoruba" @selected($user->language == 'yoruba')>Yoruba</option>
+                                                    <option value="hausa" @selected($user->language == 'hausa')>Hausa</option>
+                                                    <option value="igbo" @selected($user->language == 'igbo')>Igbo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!--end::Input group-->
                                     </div>
                                     <!--end::Card body-->
                                     <!--begin::Actions-->
