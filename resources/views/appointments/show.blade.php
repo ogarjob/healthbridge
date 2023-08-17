@@ -16,7 +16,7 @@
                                 </li>
                             </ul>
                             @admin
-                                <a  class="btn btn-primary btn-sm me-lg-n7" data-bs-toggle="modal" data-bs-target="#status">Update Status</a>
+                                <a  class="btn btn-danger btn-sm me-lg-n7" data-bs-toggle="modal" data-bs-target="#status">Update Appointment Status</a>
                             @endadmin
                             <button data-bs-toggle="modal" data-bs-target="#payment-modal" class="btn btn-success btn-sm">
                                 <i class="ki-duotone ki-credit-cart fs-2"><i class="path1"></i><i class="path2"></i></i>
@@ -60,6 +60,17 @@
                                                                 </div>
                                                             </td>
                                                             <td class="fw-bold text-end">{{ $appointment->created_at->format('d M Y, h:i a') }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-muted">
+                                                                <div class="d-flex align-items-center">
+                                                                    <i class="ki-duotone ki-geolocation-home fs-1 me-2">
+                                                                        <i class="path1"></i><i class="path2"></i>
+                                                                    </i>
+                                                                    Department
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-bold text-end">{{ $appointment->department->name }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td class="text-muted">
@@ -158,13 +169,17 @@
                                                         <tr>
                                                             <td class="text-muted">
                                                                 <div class="d-flex align-items-center">
-                                                                    <i class="ki-duotone ki-geolocation-home fs-1 me-2">
+                                                                    <i class="ki-duotone ki-pulse fs-1 me-2">
                                                                         <i class="path1"></i><i class="path2"></i>
                                                                     </i>
-                                                                    Department
+                                                                    Health Status
                                                                 </div>
                                                             </td>
-                                                            <td class="fw-bold text-end">{{ $appointment->department->name }}</td>
+                                                            <td class="fw-bold text-end">
+                                                                <textarea class="form-control form-select-sm cursor-pointer" disabled
+                                                                          data-bs-toggle="modal" data-bs-target="#health-status"
+                                                                >{{ $appointment->health_status }}</textarea>
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -233,7 +248,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="status-label">Update Status</h5>
+                    <h5 class="modal-title" id="status-label">Update Appointment Status</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -253,7 +268,31 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-danger">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--HealthStatus::edit Modal-->
+    <div class="modal fade" id="health-status" tabindex="-1" aria-labelledby="health-status-label" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="health-status-label">Update Patient Health Status</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form x-submit x-data action="{{ route('api.appointments.update', $appointment) }}" method="POST" @finish="location.reload()">
+                        @method('put')
+                        <div class="mb-10">
+                            <label class="form-label required" for="status">Status</label>
+                            <textarea class="form-control form-control-solid" name="health_status">{{ $appointment->health_status }}</textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-danger">Update</button>
                         </div>
                     </form>
                 </div>
