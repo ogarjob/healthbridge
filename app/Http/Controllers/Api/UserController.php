@@ -26,7 +26,7 @@ class UserController extends Controller
             'type'       => 'filled'
         ]));
 
-        return Response::api('Registration successful', header: [
+        return Response::api('Registration successful', headers: [
             'x-location' => route('users.show', $user)
         ]);
     }
@@ -34,7 +34,7 @@ class UserController extends Controller
     {
         $user->update($request->validated());
 
-        return Response::api('Profile update successful');
+        return Response::api('Updated Successfully');
     }
 
     public function destroy(User $user)
