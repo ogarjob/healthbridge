@@ -1,4 +1,4 @@
-<x-app title="Departments" :links="['Admin', 'Departments']">
+<x-app title="{{ __('Departments') }}" :links="['Admin', 'Departments']">
     <!--begin::Image input placeholder-->
     <style>
         .image-input-placeholder {
@@ -27,7 +27,7 @@
                                             <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor"/>
                                         </svg>
                                     </span>
-                                    <input type="text" id="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Category" aria-label="search">
+                                    <input type="text" id="search" class="form-control form-control-solid w-250px ps-14" placeholder="{{ __('Search Department') }}" aria-label="search">
                                 </div>
                             </div>
                             <div class="card-toolbar">
@@ -35,7 +35,7 @@
                                     <i class="ki-duotone ki-abstract-10 fs-4">
                                         <i class="path1"></i><i class="path2"></i>
                                     </i>
-                                    Add Department
+                                    {{ __('Add Department') }}
                                 </button>
                             </div>
                         </div>
@@ -43,8 +43,8 @@
                             <table class="table align-middle table-row-dashed fs-6 gy-5" data-table data-search-using="#search">
                                 <thead>
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                        <th>Department</th>
-                                        <th>Number Of Doctors</th>
+                                        <th>{{ __('Department') }}</th>
+                                        <th>{{ __('Number Of Doctors') }}</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -120,7 +120,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="add-department-label">Add Department</h5>
+                    <h5 class="modal-title" id="add-department-label">{{ __('Add Department') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -147,12 +147,12 @@
                                 </div>--}}
                                 <div class="{{--mt-15--}} text-start">
                                     <input type="text" name="name" id="name" class="form-control" placeholder="Department Name" aria-label="department name" required>
-                                    <div class="text-muted fs-7 mt-2">A department name is required and recommended to be unique.</div>
+                                    <div class="text-muted fs-7 mt-2">{{ __('A department name is required and recommended to be unique') }}</div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn-danger">Add</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Close') }}</button>
+                                <button class="btn btn-danger">{{ __('Add') }}</button>
                             </div>
                         </div>
                     </form>
@@ -166,7 +166,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="edit-department-label">
-                        Edit Department
+                        {{ __('Edit Department') }}
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -200,12 +200,12 @@
                                 </div>--}}
                                 <div class="{{--mt-15--}} text-start">
                                     <input type="text" name="name" id="name" class="form-control" placeholder="Department Name" required x-model="department.name" aria-label="department name">
-                                    <div class="text-muted fs-7 mt-2">A department name is required and recommended to be unique.</div>
+                                    <div class="text-muted fs-7 mt-2">{{ __('A department name is required and recommended to be unique') }}</div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn-danger">Update</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Close') }}</button>
+                                <button class="btn btn-danger">{{ __('Update') }}</button>
                             </div>
                         </div>
                     </form>

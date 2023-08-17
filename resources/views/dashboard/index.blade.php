@@ -11,7 +11,7 @@
                             <div class="card card-flush h-xl-100 bg-danger">
                                 <div class="card-header rounded bgi-no-repeat bgi-size-cover bgi-position-y-top bgi-position-x-center align-items-start h-250px" data-bs-theme="light">
                                     <h3 class="card-title align-items-start flex-column text-white pt-15">
-                                        <span class="fw-bold fs-2x mb-3">{{ Illuminate\Support\Carbon::greet() }}, {{ user('first_name') }}! 👋</span>
+                                        <span class="fw-bold fs-2x mb-3">{{ __(Illuminate\Support\Carbon::greet()) }}, {{ user('first_name') }}! 👋</span>
                                     </h3>
                                 </div>
                                 <div class="card-body mt-n20">
@@ -30,7 +30,7 @@
                                                     </div>
                                                     <div class="m-0">
                                                         <span class="text-gray-700 fw-bolder d-block fs-2qx mb-1">{{ number_format($patients_count) }}</span>
-                                                        <span class="text-gray-500 fw-semibold fs-6">Patients</span>
+                                                        <span class="text-gray-500 fw-semibold fs-6">{{ __('Patients') }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -47,7 +47,7 @@
                                                     </div>
                                                     <div class="m-0">
                                                         <span class="text-gray-700 fw-bolder d-block fs-2qx mb-1">{{ number_format($administrators_count) }}</span>
-                                                        <span class="text-gray-500 fw-semibold fs-6">Administrators</span>
+                                                        <span class="text-gray-500 fw-semibold fs-6">{{ __('Administrators') }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -66,7 +66,7 @@
                                                     </div>
                                                     <div class="m-0">
                                                         <span class="text-gray-700 fw-bolder d-block fs-2qx mb-1">{{ number_format($departments_count) }}</span>
-                                                        <span class="text-gray-500 fw-semibold fs-6">Departments</span>
+                                                        <span class="text-gray-500 fw-semibold fs-6">{{ __('Departments') }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,7 +84,7 @@
                                                     </div>
                                                     <div class="m-0">
                                                         <span class="text-gray-700 fw-bolder d-block fs-2qx mb-1">{{ number_format($appointments_count) }}</span>
-                                                        <span class="text-gray-500 fw-semibold fs-6">Appointments</span>
+                                                        <span class="text-gray-500 fw-semibold fs-6">{{ __('Appointments') }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,9 +102,9 @@
                         >
                             <div class="card-body mt-6 bgi-no-repeat bgi-size-cover bgi-position-x-center">
                                 <div class="text-white mb-9">
-                                    <h4 class="text-white">Quote of the day! ✨ 🌈 </h4>
+                                    <h4 class="text-white">{{ __('Quote of the day!') }} ✨ 🌈 </h4>
                                     <div class="mt-5">
-                                        <span>“ Waste no more time arguing what a good man should be, be one. ” —  </span>
+                                        <span>“ {{ __('Waste no more time arguing what a good man should be, be one.') }} ” —  </span>
                                         <span class="position-relative d-inline-block">
                                             <span class="text-danger opacity-75-hover"> Marcus Aurelius .</span>
                                             <span class="position-absolute opacity-25 bottom-0 start-0 border-4 border-danger border-bottom w-100"></span>
@@ -120,10 +120,10 @@
                         <div class="card card-flush">
                             <div class="card-header align-items-center py-5 gap-2 gap-md-5">
                                 <div class="card-title">
-                                    <h4>Latest Appointments</h4>
+                                    <h4>{{ __('Latest Appointments') }}</h4>
                                 </div>
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                    <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#book-appointment-modal">Book Appointment</a>
+                                    <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#book-appointment-modal">{{ __('Book Appointment') }}</a>
                                 </div>
                             </div>
                             <div class="card-body pt-0">
@@ -131,11 +131,11 @@
                                     <thead>
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                         <th>ID</th>
-                                        <th>Patient</th>
-                                        <th>Status</th>
-                                        <th>Total</th>
-                                        <th>Phone Number</th>
-                                        <th>Date</th>
+                                        <th>{{ __('Patient') }}</th>
+                                        <th>{{ __('Status') }}</th>
+                                        <th>{{ __('Total') }}</th>
+                                        <th>{{ __('Phone Number') }}</th>
+                                        <th>{{ __('Date') }}</th>
                                     </tr>
                                     </thead>
                                     <tbody class="fw-semibold text-gray-600">

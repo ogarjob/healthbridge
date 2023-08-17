@@ -1,4 +1,4 @@
-<x-app title="Appointments"  :links="['Admin', 'Appointments']">
+<x-app title="{{ __('Appointments') }}"  :links="['Admin', 'Appointments']">
     <!--begin::Main-->
     <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
         <!--begin::Content wrapper-->
@@ -24,7 +24,7 @@
                             </div>
                             <!--begin::Card toolbar-->
                             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#book-appointment-modal">Book Appointment</a>
+                                <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#book-appointment-modal">{{ __('Book Appointment') }}</a>
                             </div>
                             <!--end::Card toolbar-->
                         </div>
@@ -33,11 +33,11 @@
                                 <thead>
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                         <th>ID</th>
-                                        <th>Patient</th>
-                                        <th>Status</th>
-                                        <th>Total</th>
-                                        <th>Phone Number</th>
-                                        <th>Date</th>
+                                        <th>{{ __('Patient') }}</th>
+                                        <th>{{ __('Status') }}</th>
+                                        <th>{{ __('Total') }}</th>
+                                        <th>{{ __('Phone Number') }}</th>
+                                        <th>{{ __('Date') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody class="fw-semibold text-gray-600">
