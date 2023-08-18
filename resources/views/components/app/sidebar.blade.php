@@ -35,7 +35,7 @@
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
-                    <div class="menu-content"><span class="menu-heading fw-bold text-uppercase fs-7">Navigation</span></div>
+                    <div class="menu-content"><span class="menu-heading fw-bold text-uppercase fs-7">{{ __('Navigation') }}</span></div>
                     <!--end:Menu content-->
                 </div>
                 <!--end:Menu item-->
@@ -48,7 +48,7 @@
                                 <i class="path1"></i><i class="path2"></i><i class="path3"></i><i class="path4"></i>
                             </i>
                         </span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">{{ __('Dashboard') }}</span>
                     </a>
                     <!--end:Menu link-->
                 </div>
@@ -62,7 +62,7 @@
                                     <i class="path1"></i><i class="path2"></i>
                                 </i>
                             </span>
-                            <span class="menu-title">Appointments</span>
+                            <span class="menu-title">{{ __('Appointments') }}</span>
                         </a>
                         <!--end:Menu link-->
                     </div>
@@ -81,7 +81,7 @@
                                 </span>
                                 <!--end::Svg Icon-->
                             </span>
-                            <span class="menu-title">Departments</span>
+                            <span class="menu-title">{{ __('Departments') }}</span>
                         </a>
                         <!--end:Menu link-->
                     </div>
@@ -95,7 +95,7 @@
                                     <i class="path1"></i><i class="path2"></i><i class="path3"></i><i class="path4"></i>
                                 </i>
                             </span>
-                            <span class="menu-title">User Management</span>
+                            <span class="menu-title">{{ __('User Management') }}</span>
                             <span class="menu-arrow"></span>
                         </span>
                         <!--end:Menu link-->
@@ -108,7 +108,7 @@
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Administrators</span>
+                                    <span class="menu-title">{{ __('Administrators') }}</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -124,7 +124,7 @@
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Patients</span>
+                                    <span class="menu-title">{{ __('Patients') }}</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -146,7 +146,7 @@
                             </svg>
                         </span>
                     </span>
-                        <span class="menu-title">My Profile</span>
+                        <span class="menu-title">{{ __('My Profile') }}</span>
                     </a>
                 </div>
                 <!--end:Menu item-->
@@ -164,7 +164,7 @@
                             </svg>
                         </span>
                     </span>
-                        <span class="menu-title">My Appointments</span>
+                        <span class="menu-title">{{ __('My Appointments') }}</span>
                     </a>
                 </div>
                     <!--end:Menu item-->

@@ -146,7 +146,7 @@
                                     </span>
                                 </div>--}}
                                 <div class="{{--mt-15--}} text-start">
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Department Name" aria-label="department name" required>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="{{ __('Department Name') }}" aria-label="department name" required>
                                     <div class="text-muted fs-7 mt-2">{{ __('A department name is required and recommended to be unique') }}</div>
                                 </div>
                             </div>

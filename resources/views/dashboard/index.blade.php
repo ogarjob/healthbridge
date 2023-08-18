@@ -1,4 +1,4 @@
-<x-app title="Dashboard" :links="['Home', 'Dashboard']">
+<x-app title="{{ __('Dashboard') }}" :links="['Home', 'Dashboard']">
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
         <!--begin::Content-->

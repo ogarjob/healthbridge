@@ -257,10 +257,10 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-danger d-block mx-auto mb-md-20" data-bs-toggle="modal" data-bs-target="#ehealth-modal">
+            <button class="btn btn-danger d-block mx-auto mb-20" data-bs-toggle="modal" data-bs-target="#ehealth-modal">
                 {{ __('Consult with E-health') }}
             </button>
-            <div class="accordion mb-md-20" id="faq">
+            <div class="accordion mb-20" id="faq">
                 <h1 class="text-dark mb-5 text-center mb-10">{{ __('Frequently Asked Questions (FAQs)') }}</h1>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq_header_1">
